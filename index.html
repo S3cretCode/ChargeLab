@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Project ChargeLab: An interactive educational platform connecting stoichiometry and magnetic fields for Grade 11 Chemistry and Physics.">
+  <meta name="keywords"
+    content="chemistry, physics, stoichiometry, magnetic fields, education, Grade 11, Manitoba curriculum">
+  <title>Project ChargeLab: From Atoms to Fields</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="ChargeLab Home">
+        <img src="logo.svg" alt="" width="40" height="40">
+        <span>ChargeLab</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="chemistry.html" class="nav__link">Chemistry</a></li>
+          <li><a href="physics.html" class="nav__link">Physics</a></li>
+          <li><a href="integrated.html" class="nav__link">Integrated</a></li>
+          <li><a href="simulations.html" class="nav__link">Simulations</a></li>
+          <li><a href="glossary.html" class="nav__link">Glossary</a></li>
+          <li><a href="sources.html" class="nav__link">Sources</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+
+        <div class="mode-toggle" role="group" aria-label="Subject mode toggle">
+          <button class="mode-toggle__btn mode-toggle__btn--active" data-mode="chemistry" aria-pressed="true">
+            <span>⚛️</span> Chemistry
+          </button>
+          <button class="mode-toggle__btn" data-mode="physics" aria-pressed="false">
+            <span>🧲</span> Physics
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="page-wrapper">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__background">
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="hero__content animate-fade-in">
+        <h1 id="hero-title" class="hero__title">Project ChargeLab</h1>
+        <p class="hero__subtitle">From Atoms to Fields</p>
+
+        <p class="hero__description">
+          An interactive exploration connecting <strong>stoichiometry</strong> and
+          <strong>electrochemistry</strong> to <strong>magnetic fields</strong>.
+          Discover how chemical reactions produce the electrons that power electromagnets.
+        </p>
+
+        <div class="hero__cta">
+          <a href="chemistry.html?mode=chemistry" class="btn btn--primary btn--lg">
+            <span>⚛️</span> Enter Chemistry Mode
+          </a>
+          <a href="physics.html?mode=physics" class="btn btn--secondary btn--lg">
+            <span>🧲</span> Enter Physics Mode
+          </a>
+          <a href="integrated.html" class="btn btn--ghost btn--lg">
+            <span>🔗</span> Run Integrated Simulation
+          </a>
+        </div>
+
+        <div class="hero__links">
+          <a href="glossary.html">📖 Glossary</a>
+          <span>•</span>
+          <a href="sources.html">📚 Sources</a>
+          <span>•</span>
+          <a href="about.html">👤 About</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Objectives Section -->
+    <section class="section" aria-labelledby="objectives-title">
+      <div class="container">
+        <h2 id="objectives-title" class="text-center mb-xl">Learning Objectives</h2>
+
+        <div class="grid grid--4">
+          <article class="card feature-card animate-fade-in stagger-1">
+            <div class="feature-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
+              </svg>
+            </div>
+            <h3 class="card__title text-center">Stoichiometry</h3>
+            <p class="text-center">
+              Explain stoichiometry, limiting reagents, and how redox reactions supply electrons.
+            </p>
+          </article>
+
+          <article class="card feature-card animate-fade-in stagger-2">
+            <div class="feature-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2v20" />
+                <path d="M18 2v20" />
+                <path d="M6 8c4 0 8 2 12 0" />
+                <path d="M6 14c4 2 8 0 12 2" />
+              </svg>
+            </div>
+            <h3 class="card__title text-center">Magnetic Fields</h3>
+            <p class="text-center">
+              Model how electrons form currents and produce magnetic fields using the right-hand rule.
+            </p>
+          </article>
+
+          <article class="card feature-card animate-fade-in stagger-3">
+            <div class="feature-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="2" width="16" height="20" rx="2" />
+                <line x1="8" y1="6" x2="16" y2="6" />
+                <line x1="8" y1="10" x2="16" y2="10" />
+                <line x1="8" y1="14" x2="12" y2="14" />
+              </svg>
+            </div>
+            <h3 class="card__title text-center">Quantitative Analysis</h3>
+            <p class="text-center">
+              Analyze problems linking chemical quantities to electrical outputs and field strengths.
+            </p>
+          </article>
+
+          <article class="card feature-card animate-fade-in stagger-4">
+            <div class="feature-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3 class="card__title text-center">Real-World Applications</h3>
+            <p class="text-center">
+              Interpret results and connect them to batteries, electromagnets, and motors.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section--alt" aria-labelledby="howitworks-title">
+      <div class="container">
+        <h2 id="howitworks-title" class="text-center mb-xl">How ChargeLab Works</h2>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__header">
+              <span class="card__icon text-cyan">1</span>
+              <h3 class="card__title">Chemistry: Electrons from Reactions</h3>
+            </div>
+            <div class="card__content">
+              <p>
+                Start with the redox reaction <strong>Zn + 2MnO₂ → ZnO + Mn₂O₃</strong>.
+                Use our stoichiometry calculator to determine the limiting reagent and
+                calculate how many electrons (and thus how much charge) are released.
+              </p>
+              <a href="chemistry.html" class="btn btn--ghost btn--sm mt-md">
+                Open Chemistry Module →
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__header">
+              <span class="card__icon text-cyan">2</span>
+              <h3 class="card__title">Physics: Current Creates Fields</h3>
+            </div>
+            <div class="card__content">
+              <p>
+                Those electrons flow as electric current through conductors. Using the
+                <strong>right-hand rule</strong>, explore how current produces magnetic fields
+                in straight wires, loops, and solenoids.
+              </p>
+              <a href="physics.html" class="btn btn--ghost btn--sm mt-md">
+                Open Physics Module →
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__header">
+              <span class="card__icon text-cyan">3</span>
+              <h3 class="card__title">Integration: Complete the Circuit</h3>
+            </div>
+            <div class="card__content">
+              <p>
+                Connect chemistry to physics by importing your calculated current into the
+                magnetic field simulator. Visualize the complete energy flow from chemical
+                bonds to magnetic fields.
+              </p>
+              <a href="integrated.html" class="btn btn--ghost btn--sm mt-md">
+                Open Integrated View →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="section" aria-labelledby="quickstart-title">
+      <div class="container content-container">
+        <h2 id="quickstart-title" class="text-center mb-xl">Quick Start</h2>
+
+        <div class="card">
+          <div class="card__content">
+            <h3>Try a Sample Calculation</h3>
+            <p>
+              Let's calculate the theoretical energy from a small alkaline battery cell:
+            </p>
+
+            <ol class="mb-lg">
+              <li class="mb-sm">
+                <strong>Chemistry:</strong> Use Preset A (1.0 g Zn, 2.0 g MnO₂) in the
+                <a href="chemistry.html">Chemistry Calculator</a>
+              </li>
+              <li class="mb-sm">
+                <strong>Results:</strong> The calculator shows MnO₂ is the limiting reagent,
+                producing ~2221 C of charge and ~0.925 Wh of energy
+              </li>
+              <li class="mb-sm">
+                <strong>Physics:</strong> Import that current into the
+                <a href="physics.html">Physics Simulator</a> to see the resulting magnetic field
+              </li>
+              <li class="mb-sm">
+                <strong>Explore:</strong> Adjust the solenoid parameters (turns, length)
+                to see how the B-field changes
+              </li>
+            </ol>
+
+            <div class="flex gap-md">
+              <a href="chemistry.html?massZn=1&massMnO2=2" class="btn btn--primary">
+                Start with Preset A →
+              </a>
+              <a href="simulations.html" class="btn btn--secondary">
+                Try Virtual Labs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Alignment Section -->
+    <section class="section section--alt" aria-labelledby="curriculum-title">
+      <div class="container content-container">
+        <h2 id="curriculum-title" class="text-center mb-xl">Manitoba Curriculum Alignment</h2>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3 class="text-cyan mb-md">Chemistry 30S</h3>
+            <ul>
+              <li>Mole concept and molar mass calculations</li>
+              <li>Balancing chemical equations</li>
+              <li>Stoichiometry and limiting reagents</li>
+              <li>Oxidation-reduction reactions</li>
+              <li>Electron transfer concepts</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="text-teal mb-md">Physics 30S</h3>
+            <ul>
+              <li>Electric current and charge</li>
+              <li>Magnetic fields from currents</li>
+              <li>Right-hand rule applications</li>
+              <li>Electromagnets and solenoids</li>
+              <li>Energy conversions</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-center mt-xl text-muted">
+          See the <a href="about.html">About page</a> for detailed rubric mapping and
+          teacher resources.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__links">
+          <a href="glossary.html" class="footer__link">Glossary</a>
+          <a href="sources.html" class="footer__link">Sources</a>
+          <a href="about.html" class="footer__link">About</a>
+        </div>
+        <p class="footer__copy">
+          Project ChargeLab — Grade 11 Chemistry + Physics Final Project
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+
+</html>

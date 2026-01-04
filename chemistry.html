@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn stoichiometry, limiting reagents, and electrochemistry with our interactive calculator.">
+    <title>Chemistry Module | Project ChargeLab</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="logo.svg" alt="" width="40" height="40">
+                <span>ChargeLab</span>
+            </a>
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="chemistry.html" class="nav__link nav__link--active">Chemistry</a></li>
+                    <li><a href="physics.html" class="nav__link">Physics</a></li>
+                    <li><a href="integrated.html" class="nav__link">Integrated</a></li>
+                    <li><a href="simulations.html" class="nav__link">Simulations</a></li>
+                    <li><a href="glossary.html" class="nav__link">Glossary</a></li>
+                    <li><a href="sources.html" class="nav__link">Sources</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+
+                <div class="mode-toggle">
+                    <button class="mode-toggle__btn mode-toggle__btn--active" data-mode="chemistry" aria-pressed="true">
+                        ⚛️ Chemistry
+                    </button>
+                    <button class="mode-toggle__btn" data-mode="physics" aria-pressed="false">
+                        🧲 Physics
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="page-wrapper">
+        <div class="container">
+            <div class="section">
+                <h1>Chemistry: From Moles to Electrons</h1>
+                <p class="text-muted">
+                    Understanding how chemical reactions produce the electrons that power electrical devices.
+                </p>
+            </div>
+
+            <!-- Mole Concept Section -->
+            <section class="section" id="mole-concept">
+                <h2>The Mole Concept</h2>
+
+                <p>
+                    The <a href="glossary.html#mole" data-glossary-term="mole"><strong>mole</strong></a> is the
+                    chemist's counting unit. Just as a "dozen" means 12 items, a mole represents
+                    <strong>6.022 × 10²³</strong> particles (Avogadro's number). This enormous number is necessary
+                    because atoms and molecules are incredibly small.
+                </p>
+
+                <div class="card mb-lg">
+                    <h3>Key Formulas</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Formula</th>
+                                    <th>Variables</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Moles from mass</td>
+                                    <td><code>n = m / M</code></td>
+                                    <td>n = moles, m = mass (g), M = molar mass (g/mol)</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of particles</td>
+                                    <td><code>N = n × Nₐ</code></td>
+                                    <td>N = particles, Nₐ = 6.022 × 10²³</td>
+                                </tr>
+                                <tr>
+                                    <td>Molar mass</td>
+                                    <td>Sum of atomic masses</td>
+                                    <td>From periodic table</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="show-work mt-md">
+                        <div class="show-work__header" aria-expanded="false">
+                            <span>Technical Note: Molar Mass Calculation</span>
+                            <span class="show-work__toggle">Show Details ▼</span>
+                        </div>
+                        <div class="show-work__content">
+                            <p>
+                                <strong>For MnO₂:</strong> The molar mass is calculated by adding the atomic masses
+                                of each element in the compound:
+                            </p>
+                            <p class="work-step__formula">
+                                M(MnO₂) = M(Mn) + 2 × M(O) = 54.938 + 2 × 15.999 = 86.936 g/mol
+                            </p>
+                            <p>
+                                <strong>For Zn:</strong> Zinc is a pure element, so its molar mass equals its atomic
+                                mass:
+                            </p>
+                            <p class="work-step__formula">
+                                M(Zn) = 65.38 g/mol (from periodic table)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Balancing Equations Section -->
+            <section class="section" id="balancing">
+                <h2>Balancing Chemical Equations</h2>
+
+                <p>
+                    Chemical equations must be <a href="glossary.html#balanced-equation"><strong>balanced</strong></a>
+                    to satisfy the law of conservation of mass. The number of atoms of each element must be
+                    equal on both sides of the equation.
+                </p>
+
+                <div class="card mb-lg">
+                    <h3>Our Reaction: Zinc-Carbon Battery</h3>
+                    <p class="text-center" style="font-size: 1.5rem; font-family: var(--font-mono);">
+                        <span class="text-cyan">Zn</span> + 2<span class="text-teal">MnO₂</span> →
+                        ZnO + Mn₂O₃
+                    </p>
+
+                    <div class="table-container mt-lg">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Reactants</th>
+                                    <th>Products</th>
+                                    <th>Balanced?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Zn</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Mn</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td>4</td>
+                                    <td>4 (1 + 3)</td>
+                                    <td>✓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Limiting Reagent Section -->
+            <section class="section" id="limiting-reagent">
+                <h2>Limiting Reagent</h2>
+
+                <p>
+                    The <a href="glossary.html#limiting-reagent"><strong>limiting reagent</strong></a> is the
+                    reactant that is completely consumed first, determining how much product can form.
+                    The other reactant(s) are in excess.
+                </p>
+
+                <div class="card mb-lg">
+                    <h3>How to Identify the Limiting Reagent</h3>
+                    <ol>
+                        <li>Convert all reactant masses to moles using <code>n = m/M</code></li>
+                        <li>Compare the mole ratio to the stoichiometric ratio from the balanced equation</li>
+                        <li>The reactant that would run out first is the limiting reagent</li>
+                    </ol>
+
+                    <p class="mt-md">
+                        <strong>For our reaction:</strong> The ratio is 1 Zn : 2 MnO₂. If you have equal moles
+                        of each, MnO₂ would be limiting because you need twice as much of it.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Redox Reactions Section -->
+            <section class="section" id="redox">
+                <h2>Redox Reactions and Electron Transfer</h2>
+
+                <p>
+                    <a href="glossary.html#redox"><strong>Redox</strong></a> (reduction-oxidation) reactions
+                    involve the transfer of electrons between species. In our battery reaction:
+                </p>
+
+                <div class="grid grid--2 mb-lg">
+                    <div class="card">
+                        <h3 class="text-cyan">Oxidation (Loss of e⁻)</h3>
+                        <p class="font-mono text-center" style="font-size: 1.2rem;">
+                            Zn → Zn²⁺ + 2e⁻
+                        </p>
+                        <p class="text-muted">
+                            Zinc metal loses 2 electrons, becoming a zinc ion. This occurs at the anode (negative
+                            terminal).
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-teal">Reduction (Gain of e⁻)</h3>
+                        <p class="font-mono text-center" style="font-size: 1.2rem;">
+                            MnO₂ + e⁻ → products
+                        </p>
+                        <p class="text-muted">
+                            Manganese dioxide gains electrons, getting reduced. This occurs at the cathode (positive
+                            terminal).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Half-Reaction Animation</h3>
+                    <p class="text-muted mb-md">
+                        Watch electrons flow from the zinc anode to the MnO₂ cathode:
+                    </p>
+                    <div class="simulation-container" style="height: 200px;">
+                        <canvas id="half-reaction-canvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="show-work mt-lg">
+                    <div class="show-work__header">
+                        <span>Technical Note: Faraday's Laws</span>
+                        <span class="show-work__toggle">Show Details ▼</span>
+                    </div>
+                    <div class="show-work__content">
+                        <p>
+                            <strong>Faraday's constant</strong> (F = 96,485 C/mol) represents the charge carried
+                            by one mole of electrons. This allows us to convert between moles of electrons and
+                            electrical charge:
+                        </p>
+                        <p class="work-step__formula">
+                            Q = n<sub>e</sub> × F
+                        </p>
+                        <p>
+                            Where Q is charge in Coulombs, n<sub>e</sub> is moles of electrons, and F is Faraday's
+                            constant.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stoichiometry Calculator -->
+            <section class="section" id="calculator">
+                <h2>Stoichiometry Calculator</h2>
+
+                <div id="chemistry-calculator" class="calculator-panel">
+                    <div class="calculator-panel__header">
+                        <h3 class="calculator-panel__title">
+                            ⚛️ Zn + 2MnO₂ → ZnO + Mn₂O₃
+                        </h3>
+                        <div class="presets">
+                            <span class="text-muted">Presets:</span>
+                            <button class="preset-btn" data-preset="A">A: 1.0g / 2.0g</button>
+                            <button class="preset-btn" data-preset="B">B: 10g / 100g</button>
+                            <button class="preset-btn" data-preset="C">C: 5.0g / 3.0g</button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__body">
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-mass-zn">
+                                    Mass of Zinc (g)
+                                    <span class="info-icon"
+                                        data-tooltip="Enter the mass of zinc metal in grams">?</span>
+                                </label>
+                                <input type="number" id="input-mass-zn" class="form-input form-input--number"
+                                    value="1.0" min="0" step="0.1" placeholder="e.g., 1.0">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-mass-mno2">
+                                    Mass of MnO₂ (g)
+                                    <span class="info-icon"
+                                        data-tooltip="Enter the mass of manganese dioxide in grams">?</span>
+                                </label>
+                                <input type="number" id="input-mass-mno2" class="form-input form-input--number"
+                                    value="2.0" min="0" step="0.1" placeholder="e.g., 2.0">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-molar-mass-zn">
+                                    Molar Mass Zn (g/mol)
+                                    <span class="info-icon"
+                                        data-tooltip="Default: 65.38 g/mol. Edit for custom calculations.">?</span>
+                                </label>
+                                <input type="number" id="input-molar-mass-zn" class="form-input form-input--number"
+                                    value="65.38" min="0" step="0.01">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-molar-mass-mno2">
+                                    Molar Mass MnO₂ (g/mol)
+                                    <span class="info-icon"
+                                        data-tooltip="Default: 86.936 g/mol. Edit for custom calculations.">?</span>
+                                </label>
+                                <input type="number" id="input-molar-mass-mno2" class="form-input form-input--number"
+                                    value="86.936" min="0" step="0.001">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-voltage">
+                                    Cell Voltage (V)
+                                    <span class="info-icon"
+                                        data-tooltip="Typical alkaline cell voltage is ~1.5V">?</span>
+                                </label>
+                                <input type="number" id="input-voltage" class="form-input form-input--number"
+                                    value="1.5" min="0" step="0.1">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label form-label--with-tooltip" for="input-electrons">
+                                    Electrons per Reaction
+                                    <span class="info-icon"
+                                        data-tooltip="Default: 2 electrons transferred per Zn atom oxidized. This is a simplification; actual battery chemistry may differ.">?</span>
+                                </label>
+                                <input type="number" id="input-electrons" class="form-input form-input--number"
+                                    value="2" min="1" max="10" step="1">
+                            </div>
+
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label form-label--with-tooltip" for="input-resistance">
+                                    Load Resistance (Ω) — Optional
+                                    <span class="info-icon"
+                                        data-tooltip="Enter a resistance to calculate current and estimated runtime">?</span>
+                                </label>
+                                <input type="number" id="input-resistance" class="form-input form-input--number" min="0"
+                                    step="0.1" placeholder="e.g., 10 (leave empty to skip)">
+                            </div>
+                        </div>
+
+                        <button id="btn-calculate" class="btn btn--primary mt-lg" style="width: 100%;">
+                            Calculate Results
+                        </button>
+
+                        <!-- Results Panel -->
+                        <div class="results-panel mt-lg">
+                            <h4 class="mb-md">Results</h4>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Moles of Zn:</span>
+                                <span class="result-item__value" id="result-moles-zn">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Moles of MnO₂:</span>
+                                <span class="result-item__value" id="result-moles-mno2">—</span>
+                            </div>
+
+                            <div class="result-item result-item--highlight">
+                                <span class="result-item__label">Limiting Reagent:</span>
+                                <span class="result-item__value" id="result-limiting">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Total Charge (Q):</span>
+                                <span class="result-item__value" id="result-charge">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Energy (Joules):</span>
+                                <span class="result-item__value" id="result-energy-j">—</span>
+                            </div>
+
+                            <div class="result-item result-item--highlight">
+                                <span class="result-item__label">Energy (Watt-hours):</span>
+                                <span class="result-item__value" id="result-energy-wh">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Estimated Current:</span>
+                                <span class="result-item__value" id="result-current">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Estimated Runtime:</span>
+                                <span class="result-item__value" id="result-runtime">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Show Work Panel -->
+                        <div class="show-work mt-lg">
+                            <div class="show-work__header">
+                                <span>📝 Show Step-by-Step Work</span>
+                                <span class="show-work__toggle">Show Work ▼</span>
+                            </div>
+                            <div class="show-work__content" id="work-steps-content">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__footer">
+                        <button id="btn-export-json" class="btn btn--ghost btn--sm">
+                            📥 Export JSON
+                        </button>
+                        <button id="btn-share" class="btn btn--ghost btn--sm">
+                            🔗 Share Link
+                        </button>
+                        <button id="btn-print" class="btn btn--ghost btn--sm">
+                            🖨️ Print Report
+                        </button>
+                        <a href="physics.html" class="btn btn--primary btn--sm">
+                            Use in Physics →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Worked Examples -->
+            <section class="section" id="examples">
+                <h2>Worked Examples</h2>
+
+                <!-- Example 1 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">1</span>
+                        <h3 class="example__title">Finding the Limiting Reagent</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> If you have 3.27 g of Zn and 4.35 g of MnO₂, which
+                            reactant is the limiting reagent for the reaction Zn + 2MnO₂ → ZnO + Mn₂O₃?
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>Convert masses to moles:</strong>
+                                    <p class="work-step__formula">
+                                        n(Zn) = 3.27 g ÷ 65.38 g/mol = 0.0500 mol
+                                    </p>
+                                    <p class="work-step__formula">
+                                        n(MnO₂) = 4.35 g ÷ 86.936 g/mol = 0.0500 mol
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Compare to stoichiometric ratio:</strong>
+                                    <p>The balanced equation requires 1 mol Zn : 2 mol MnO₂</p>
+                                    <p class="work-step__formula">
+                                        For 0.0500 mol Zn, we need: 0.0500 × 2 = 0.100 mol MnO₂
+                                    </p>
+                                    <p class="work-step__formula">
+                                        We only have 0.0500 mol MnO₂, which is less than 0.100 mol needed
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Conclusion:</strong>
+                                    <p class="text-cyan">
+                                        <strong>MnO₂ is the limiting reagent</strong> because we don't have enough
+                                        of it to react with all the zinc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Example 2 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">2</span>
+                        <h3 class="example__title">Calculating Charge and Energy</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> Calculate the theoretical charge (Q) and energy (E)
+                            produced when 5.0 g of Zn reacts completely in a 1.5 V cell, assuming 2 electrons
+                            are transferred per zinc atom.
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate moles of Zn:</strong>
+                                    <p class="work-step__formula">
+                                        n(Zn) = 5.0 g ÷ 65.38 g/mol = 0.0765 mol
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate moles of electrons:</strong>
+                                    <p class="work-step__formula">
+                                        n(e⁻) = n(Zn) × 2 = 0.0765 × 2 = 0.153 mol e⁻
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate charge using Faraday's constant:</strong>
+                                    <p class="work-step__formula">
+                                        Q = n(e⁻) × F = 0.153 mol × 96,485 C/mol = 14,762 C
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">4</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate energy:</strong>
+                                    <p class="work-step__formula">
+                                        E = V × Q = 1.5 V × 14,762 C = 22,143 J
+                                    </p>
+                                    <p class="work-step__formula">
+                                        E = 22,143 J ÷ 3600 = <strong class="text-teal">6.15 Wh</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Example 3 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">3</span>
+                        <h3 class="example__title">Estimating Battery Runtime</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> A battery produces 0.925 Wh of energy. If it powers
+                            a device that draws 150 mA at 1.5 V, approximately how long will it last?
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate power consumption:</strong>
+                                    <p class="work-step__formula">
+                                        P = V × I = 1.5 V × 0.150 A = 0.225 W
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate runtime:</strong>
+                                    <p class="work-step__formula">
+                                        t = E ÷ P = 0.925 Wh ÷ 0.225 W = 4.11 hours
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Convert to minutes:</strong>
+                                    <p class="work-step__formula">
+                                        t = 4.11 × 60 = <strong class="text-teal">247 minutes ≈ 4 hours 7
+                                            minutes</strong>
+                                    </p>
+                                    <p class="text-muted mt-sm">
+                                        <em>Note: This is a theoretical estimate. Real battery performance varies
+                                            due to internal resistance, temperature, and discharge characteristics.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="section">
+                <div class="card">
+                    <h2>Next: Connect to Physics</h2>
+                    <p>
+                        Now that you understand how chemical reactions produce electrons and charge,
+                        explore how that electrical current creates magnetic fields.
+                    </p>
+                    <div class="flex gap-md mt-lg">
+                        <a href="physics.html" class="btn btn--primary">
+                            🧲 Go to Physics Module →
+                        </a>
+                        <a href="integrated.html" class="btn btn--secondary">
+                            🔗 See Integrated View
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__links">
+                    <a href="glossary.html" class="footer__link">Glossary</a>
+                    <a href="sources.html" class="footer__link">Sources</a>
+                    <a href="about.html" class="footer__link">About</a>
+                </div>
+                <p class="footer__copy">
+                    Project ChargeLab — Grade 11 Chemistry + Physics Final Project
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="chemistry.js"></script>
+</body>
+
+</html>

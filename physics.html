@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore magnetic fields, the right-hand rule, and how electric current creates magnetism.">
+    <title>Physics Module | Project ChargeLab</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="logo.svg" alt="" width="40" height="40">
+                <span>ChargeLab</span>
+            </a>
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="chemistry.html" class="nav__link">Chemistry</a></li>
+                    <li><a href="physics.html" class="nav__link nav__link--active">Physics</a></li>
+                    <li><a href="integrated.html" class="nav__link">Integrated</a></li>
+                    <li><a href="simulations.html" class="nav__link">Simulations</a></li>
+                    <li><a href="glossary.html" class="nav__link">Glossary</a></li>
+                    <li><a href="sources.html" class="nav__link">Sources</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+
+                <div class="mode-toggle">
+                    <button class="mode-toggle__btn" data-mode="chemistry" aria-pressed="false">
+                        ⚛️ Chemistry
+                    </button>
+                    <button class="mode-toggle__btn mode-toggle__btn--active" data-mode="physics" aria-pressed="true">
+                        🧲 Physics
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="page-wrapper">
+        <div class="container">
+            <div class="section">
+                <h1>Physics: Current to Magnetic Fields</h1>
+                <p class="text-muted">
+                    Understanding how moving charges (electric current) create magnetic fields.
+                </p>
+            </div>
+
+            <!-- Electric Current Section -->
+            <section class="section" id="current">
+                <h2>Electric Current as Moving Charge</h2>
+
+                <p>
+                    <a href="glossary.html#electric-current"><strong>Electric current</strong></a> is the
+                    flow of electric charge, typically electrons moving through a conductor. Current (I) is
+                    measured in <strong>Amperes (A)</strong>, where 1 A = 1 Coulomb per second.
+                </p>
+
+                <div class="card mb-lg">
+                    <h3>Key Formulas</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Formula</th>
+                                    <th>Units</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Current definition</td>
+                                    <td><code>I = Q / t</code></td>
+                                    <td>A = C/s</td>
+                                </tr>
+                                <tr>
+                                    <td>Ohm's Law</td>
+                                    <td><code>V = I × R</code></td>
+                                    <td>V = A × Ω</td>
+                                </tr>
+                                <tr>
+                                    <td>Power</td>
+                                    <td><code>P = V × I</code></td>
+                                    <td>W = V × A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    In our battery context, the electrons produced by the chemical reaction at the anode
+                    flow through an external circuit to the cathode. This flow of electrons IS the electric
+                    current that can do useful work — like creating a magnetic field.
+                </p>
+            </section>
+
+            <!-- Magnetic Fields Section -->
+            <section class="section" id="magnetic-fields">
+                <h2>Magnetic Fields from Electric Current</h2>
+
+                <p>
+                    A fundamental discovery in physics: <strong>moving charges create magnetic fields</strong>.
+                    This connection between electricity and magnetism is called
+                    <a href="glossary.html#electromagnetism"><strong>electromagnetism</strong></a>.
+                </p>
+
+                <div class="grid grid--3 mb-lg">
+                    <div class="card">
+                        <h3 class="text-cyan">Straight Wire</h3>
+                        <p>
+                            Current through a straight wire creates circular magnetic field lines
+                            centered on the wire. Field strength decreases with distance.
+                        </p>
+                        <p class="font-mono text-sm mt-md">
+                            B = μ₀I / (2πr)
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-cyan">Circular Loop</h3>
+                        <p>
+                            A loop of wire carrying current creates a magnetic field through its center,
+                            similar to a bar magnet with north and south poles.
+                        </p>
+                        <p class="font-mono text-sm mt-md">
+                            B ≈ μ₀NI / (2r)
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-cyan">Solenoid</h3>
+                        <p>
+                            A coil of many loops (solenoid) creates a strong, uniform magnetic field
+                            inside. This is the basis of electromagnets.
+                        </p>
+                        <p class="font-mono text-sm mt-md">
+                            B = μ₀μᵣNI / L
+                        </p>
+                    </div>
+                </div>
+
+                <div class="show-work">
+                    <div class="show-work__header">
+                        <span>Technical Note: Permeability Constants</span>
+                        <span class="show-work__toggle">Show Details ▼</span>
+                    </div>
+                    <div class="show-work__content">
+                        <p>
+                            <strong>μ₀ (Permeability of free space)</strong> = 4π × 10⁻⁷ H/m ≈ 1.257 × 10⁻⁶ H/m
+                        </p>
+                        <p>
+                            <strong>μᵣ (Relative permeability)</strong> describes how much a material
+                            enhances the magnetic field compared to vacuum:
+                        </p>
+                        <ul>
+                            <li>Air: μᵣ ≈ 1</li>
+                            <li>Ferrite: μᵣ ≈ 2000</li>
+                            <li>Soft iron/steel: μᵣ ≈ 4000-5000</li>
+                        </ul>
+                        <p>
+                            Inserting a ferromagnetic core into a solenoid dramatically increases
+                            the magnetic field strength!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right-Hand Rule Section -->
+            <section class="section" id="right-hand-rule">
+                <h2>The Right-Hand Rule</h2>
+
+                <p>
+                    The <a href="glossary.html#right-hand-rule"><strong>right-hand rule</strong></a> is
+                    a mnemonic for determining the direction of the magnetic field relative to the
+                    current direction.
+                </p>
+
+                <div class="grid grid--2 mb-lg">
+                    <div class="card">
+                        <h3>For Straight Wires</h3>
+                        <ol>
+                            <li>Point your thumb in the direction of current flow (conventional current)</li>
+                            <li>Your fingers curl in the direction of the magnetic field lines</li>
+                            <li>The field forms concentric circles around the wire</li>
+                        </ol>
+                    </div>
+
+                    <div class="card">
+                        <h3>For Loops and Solenoids</h3>
+                        <ol>
+                            <li>Curl your fingers in the direction current flows around the loop</li>
+                            <li>Your thumb points in the direction of the magnetic field (through the center)</li>
+                            <li>Your thumb points toward the North pole</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Right-Hand Rule Interactive Demo -->
+                <div class="card">
+                    <h3>Interactive Demonstrator</h3>
+                    <div id="right-hand-rule-demo" class="simulation-container" style="height: 300px;">
+                        <canvas></canvas>
+                    </div>
+                    <div class="flex gap-md mt-md">
+                        <button class="btn btn--ghost btn--sm"
+                            onclick="window.physicsCalculatorUI?.rhrDemo?.setMode('wire')">
+                            Show Wire Rule
+                        </button>
+                        <button class="btn btn--ghost btn--sm"
+                            onclick="window.physicsCalculatorUI?.rhrDemo?.setMode('loop')">
+                            Show Loop/Solenoid Rule
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Magnetic Field Simulator -->
+            <section class="section" id="simulator">
+                <h2>Magnetic Field Simulator</h2>
+
+                <div id="physics-calculator" class="calculator-panel">
+                    <div class="calculator-panel__header">
+                        <h3 class="calculator-panel__title">
+                            🧲 B-Field Calculator & Visualizer
+                        </h3>
+                        <div class="presets">
+                            <span class="text-muted">Presets:</span>
+                            <button class="preset-btn" data-physics-preset="straight-wire">Straight Wire</button>
+                            <button class="preset-btn" data-physics-preset="small-coil">Small Coil</button>
+                            <button class="preset-btn" data-physics-preset="solenoid">Solenoid</button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__body">
+                        <!-- Simulation Canvas -->
+                        <div class="simulation-container mb-lg" style="aspect-ratio: 16/9; max-height: 400px;">
+                            <canvas id="field-simulator-canvas"></canvas>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="input-grid">
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label" for="input-conductor-type">Conductor Type</label>
+                                <select id="input-conductor-type" class="form-select">
+                                    <option value="solenoid">Solenoid (coil)</option>
+                                    <option value="single-loop">Single Loop / Coil</option>
+                                    <option value="straight-wire">Straight Wire</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label form-label--with-tooltip" for="input-current">
+                                    Current: <span id="current-display">1.0 A</span>
+                                    <span class="info-icon"
+                                        data-tooltip="Adjust the current flowing through the conductor">?</span>
+                                </label>
+                                <input type="range" id="input-current" class="range-slider" min="0.1" max="10"
+                                    step="0.1" value="1">
+                            </div>
+
+                            <div class="form-group" id="control-turns">
+                                <label class="form-label" for="input-turns">Number of Turns (N)</label>
+                                <input type="number" id="input-turns" class="form-input form-input--number" value="100"
+                                    min="1" max="1000" step="1">
+                            </div>
+
+                            <div class="form-group" id="control-radius" style="display: none;">
+                                <label class="form-label" for="input-radius">Radius (cm)</label>
+                                <input type="number" id="input-radius" class="form-input form-input--number" value="1.2"
+                                    min="0.1" max="20" step="0.1">
+                            </div>
+
+                            <div class="form-group" id="control-length">
+                                <label class="form-label" for="input-length">Length (cm)</label>
+                                <input type="number" id="input-length" class="form-input form-input--number" value="5"
+                                    min="0.1" max="50" step="0.1">
+                            </div>
+
+                            <div class="form-group" id="control-distance" style="display: none;">
+                                <label class="form-label" for="input-distance">Distance from wire (cm)</label>
+                                <input type="number" id="input-distance" class="form-input form-input--number" value="1"
+                                    min="0.1" max="20" step="0.1">
+                            </div>
+
+                            <div class="form-group" id="control-material">
+                                <label class="form-label" for="input-material">Core Material</label>
+                                <select id="input-material" class="form-select">
+                                    <option value="air">Air (μᵣ = 1)</option>
+                                    <option value="ferrite">Ferrite (μᵣ = 2000)</option>
+                                    <option value="steel">Steel (μᵣ = 4000)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Import from Chemistry Toggle -->
+                        <div class="form-check mt-lg">
+                            <input type="checkbox" id="import-chemistry">
+                            <label for="import-chemistry">
+                                Import current from Chemistry calculation
+                                <span class="text-muted">(if available)</span>
+                            </label>
+                        </div>
+
+                        <!-- Results Panel -->
+                        <div class="results-panel mt-lg">
+                            <h4 class="mb-md">Calculated Magnetic Field</h4>
+
+                            <div class="result-item result-item--highlight">
+                                <span class="result-item__label">B-field (at center):</span>
+                                <span class="result-item__value text-teal" id="result-b-field"
+                                    style="font-size: 1.25rem;">—</span>
+                            </div>
+
+                            <div class="result-item">
+                                <span class="result-item__label">Formula used:</span>
+                                <span class="result-item__value font-mono" id="result-formula">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Show Work Panel -->
+                        <div class="show-work mt-lg">
+                            <div class="show-work__header">
+                                <span>📝 Show Step-by-Step Work</span>
+                                <span class="show-work__toggle">Show Work ▼</span>
+                            </div>
+                            <div class="show-work__content" id="physics-work-steps">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__footer">
+                        <button id="btn-physics-export" class="btn btn--ghost btn--sm">
+                            📥 Export JSON
+                        </button>
+                        <button id="btn-physics-share" class="btn btn--ghost btn--sm">
+                            🔗 Share Link
+                        </button>
+                        <a href="chemistry.html" class="btn btn--secondary btn--sm">
+                            ← Back to Chemistry
+                        </a>
+                        <a href="integrated.html" class="btn btn--primary btn--sm">
+                            See Integration →
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Worked Examples -->
+            <section class="section" id="examples">
+                <h2>Physics Examples</h2>
+
+                <!-- Example 1 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">1</span>
+                        <h3 class="example__title">Solenoid Field Calculation</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> A solenoid has 200 turns wound over a length of 5 cm.
+                            If a current of 2 A flows through it (with an air core), what is the magnetic
+                            field strength at its center?
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>List known values:</strong>
+                                    <p class="work-step__formula">
+                                        N = 200 turns, L = 5 cm = 0.05 m, I = 2 A, μᵣ = 1 (air)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Apply solenoid formula:</strong>
+                                    <p class="work-step__formula">
+                                        B = μ₀ × μᵣ × N × I / L
+                                    </p>
+                                    <p class="work-step__formula">
+                                        B = (4π × 10⁻⁷) × 1 × 200 × 2 / 0.05
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate:</strong>
+                                    <p class="work-step__formula">
+                                        B = 1.257 × 10⁻⁶ × 8000
+                                    </p>
+                                    <p class="work-step__formula">
+                                        B = <strong class="text-teal">0.01005 T = 10.05 mT</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Example 2 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">2</span>
+                        <h3 class="example__title">Effect of Core Material</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> Using the same solenoid as Example 1, what would be
+                            the B-field if we insert a ferrite core (μᵣ = 2000)?
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>The only change is μᵣ:</strong>
+                                    <p class="work-step__formula">
+                                        B = μ₀ × μᵣ × N × I / L
+                                    </p>
+                                    <p class="work-step__formula">
+                                        B = (4π × 10⁻⁷) × 2000 × 200 × 2 / 0.05
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate:</strong>
+                                    <p class="work-step__formula">
+                                        B = 0.01005 × 2000 = <strong class="text-teal">20.1 T</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Interpretation:</strong>
+                                    <p>
+                                        The ferrite core increases the B-field by a factor of 2000! This is why
+                                        electromagnets use iron cores — the magnetic material amplifies the field
+                                        enormously.
+                                    </p>
+                                    <p class="text-muted mt-sm">
+                                        <em>Note: In practice, saturation effects limit the maximum B-field
+                                            achievable in ferromagnetic materials.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Example 3 -->
+                <article class="example">
+                    <div class="example__header">
+                        <span class="example__number">3</span>
+                        <h3 class="example__title">Small Coil Calculation</h3>
+                    </div>
+                    <div class="example__body">
+                        <div class="example__problem">
+                            <strong>Problem:</strong> A small coil (like in a phone speaker) has 30 turns
+                            with a radius of 1.2 cm. With 1 A of current, what is the B-field at its center?
+                        </div>
+
+                        <div class="example__solution">
+                            <strong>Solution:</strong>
+
+                            <div class="work-step mt-md">
+                                <span class="work-step__number">1</span>
+                                <div class="work-step__content">
+                                    <strong>Use the loop/coil formula:</strong>
+                                    <p class="work-step__formula">
+                                        B ≈ μ₀ × N × I / (2r)
+                                    </p>
+                                    <p class="work-step__formula">
+                                        B ≈ (4π × 10⁻⁷) × 30 × 1 / (2 × 0.012)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">2</span>
+                                <div class="work-step__content">
+                                    <strong>Calculate:</strong>
+                                    <p class="work-step__formula">
+                                        B ≈ 3.77 × 10⁻⁵ / 0.024
+                                    </p>
+                                    <p class="work-step__formula">
+                                        B ≈ <strong class="text-teal">1.57 × 10⁻³ T = 1.57 mT</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="work-step">
+                                <span class="work-step__number">3</span>
+                                <div class="work-step__content">
+                                    <strong>Context:</strong>
+                                    <p>
+                                        This field strength is about 30× stronger than Earth's magnetic field
+                                        (~50 μT). Combined with a permanent magnet, this varying field can
+                                        push a speaker cone back and forth to create sound waves.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Applications Section -->
+            <section class="section" id="applications">
+                <h2>Real-World Applications</h2>
+
+                <div class="grid grid--2">
+                    <div class="card">
+                        <h3>🔋 Electromagnets</h3>
+                        <p>
+                            Cranes in scrapyards use powerful electromagnets to lift steel. The ability
+                            to turn the magnet on and off makes them perfect for moving metal objects.
+                        </p>
+                        <p class="text-muted">
+                            Typical lifting electromagnet: N ≈ 1000 turns, I ≈ 10-50 A, iron core
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🔊 Speakers</h3>
+                        <p>
+                            Audio speakers use a small coil (voice coil) in a magnetic field. Varying
+                            current creates varying force, moving the speaker cone to produce sound.
+                        </p>
+                        <p class="text-muted">
+                            Typical voice coil: N ≈ 20-100 turns, I ≈ 0.1-1 A
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>⚡ Electric Motors</h3>
+                        <p>
+                            Motors use the force on current-carrying wires in magnetic fields.
+                            Multiple coils and clever switching create continuous rotation.
+                        </p>
+                        <p class="text-muted">
+                            The torque on a current loop: τ = NBIA sin(θ)
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏥 MRI Machines</h3>
+                        <p>
+                            Medical MRI scanners use superconducting solenoids to create extremely
+                            strong, uniform magnetic fields (1.5-7 Tesla) for imaging.
+                        </p>
+                        <p class="text-muted">
+                            Typical MRI: B ≈ 1.5-3 T, thousands of turns, superconducting coils
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="section">
+                <div class="card">
+                    <h2>Complete the Circuit</h2>
+                    <p>
+                        You've learned how chemistry produces electrons and how current creates magnetic
+                        fields. Now see the complete picture — from atoms to fields.
+                    </p>
+                    <div class="flex gap-md mt-lg">
+                        <a href="integrated.html" class="btn btn--primary">
+                            🔗 View Integrated Simulation →
+                        </a>
+                        <a href="simulations.html" class="btn btn--secondary">
+                            🧪 Try Virtual Labs
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__links">
+                    <a href="glossary.html" class="footer__link">Glossary</a>
+                    <a href="sources.html" class="footer__link">Sources</a>
+                    <a href="about.html" class="footer__link">About</a>
+                </div>
+                <p class="footer__copy">
+                    Project ChargeLab — Grade 11 Chemistry + Physics Final Project
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="physics.js"></script>
+</body>
+
+</html>

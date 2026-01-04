@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Interactive virtual labs for exploring limiting reagents and magnetic field mapping.">
+    <title>Simulations & Virtual Labs | Project ChargeLab</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="logo.svg" alt="" width="40" height="40">
+                <span>ChargeLab</span>
+            </a>
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="chemistry.html" class="nav__link">Chemistry</a></li>
+                    <li><a href="physics.html" class="nav__link">Physics</a></li>
+                    <li><a href="integrated.html" class="nav__link">Integrated</a></li>
+                    <li><a href="simulations.html" class="nav__link nav__link--active">Simulations</a></li>
+                    <li><a href="glossary.html" class="nav__link">Glossary</a></li>
+                    <li><a href="sources.html" class="nav__link">Sources</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+
+                <div class="mode-toggle">
+                    <button class="mode-toggle__btn" data-mode="chemistry">⚛️ Chemistry</button>
+                    <button class="mode-toggle__btn" data-mode="physics">🧲 Physics</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-wrapper">
+        <div class="container">
+            <div class="section">
+                <h1>Virtual Labs & Simulations</h1>
+                <p class="text-muted">
+                    Hands-on interactive experiments to reinforce your understanding.
+                </p>
+            </div>
+
+            <!-- Lab 1: Limiting Reagent -->
+            <section class="section" id="limiting-reagent-lab">
+                <h2>🧪 Lab 1: Limiting Reagent Visualizer</h2>
+
+                <div class="card mb-lg">
+                    <h3>Objective</h3>
+                    <p>
+                        Understand how the amounts of reactants determine the limiting reagent
+                        and visualize what happens to excess reactants.
+                    </p>
+
+                    <h4 class="mt-lg">Instructions</h4>
+                    <ol>
+                        <li>Adjust the sliders to change the mass of each reactant</li>
+                        <li>Observe which reactant becomes the limiting reagent</li>
+                        <li>Watch the visualization show leftover excess reactant</li>
+                        <li>Try to find ratios where both reactants are used completely</li>
+                    </ol>
+                </div>
+
+                <div id="limiting-reagent-lab" class="calculator-panel">
+                    <div class="calculator-panel__header">
+                        <h3 class="calculator-panel__title">Zn + 2MnO₂ → Products</h3>
+                    </div>
+
+                    <div class="calculator-panel__body">
+                        <div class="grid grid--2">
+                            <div class="form-group">
+                                <label class="form-label" for="lab-slider-zn">
+                                    Mass of Zinc: <span id="lab-display-zn">5.0 g</span>
+                                </label>
+                                <input type="range" id="lab-slider-zn" class="range-slider" min="0.5" max="20"
+                                    step="0.5" value="5">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="lab-slider-mno2">
+                                    Mass of MnO₂: <span id="lab-display-mno2">10.0 g</span>
+                                </label>
+                                <input type="range" id="lab-slider-mno2" class="range-slider" min="0.5" max="20"
+                                    step="0.5" value="10">
+                            </div>
+                        </div>
+
+                        <div id="lab-visualization" class="mt-lg"
+                            style="min-height: 200px; background: var(--color-bg-tertiary); border-radius: var(--radius-md); padding: 1rem;">
+                            <!-- Populated by JavaScript -->
+                        </div>
+
+                        <div id="lab-results" class="results-panel mt-lg">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__footer">
+                        <span class="text-muted">Molar masses: Zn = 65.38 g/mol, MnO₂ = 86.936 g/mol</span>
+                    </div>
+                </div>
+
+                <div class="card mt-lg">
+                    <h3>Learning Outcomes</h3>
+                    <ul>
+                        <li>Visualize the mole ratio required by the balanced equation (1:2)</li>
+                        <li>Understand why the "limiting" reagent controls product formation</li>
+                        <li>Observe that excess reagent remains unreacted</li>
+                        <li>See that equal masses do NOT mean equal moles (due to different molar masses)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Lab 2: Field Mapping -->
+            <section class="section" id="field-mapping-lab">
+                <h2>🧲 Lab 2: Magnetic Field Mapping</h2>
+
+                <div class="card mb-lg">
+                    <h3>Objective</h3>
+                    <p>
+                        Map the magnetic field around and inside a solenoid by placing a
+                        virtual probe at different locations.
+                    </p>
+
+                    <h4 class="mt-lg">Instructions</h4>
+                    <ol>
+                        <li>Adjust the current and number of turns using the sliders</li>
+                        <li>Click anywhere on the visualization to place a probe</li>
+                        <li>Observe the field strength reading at that location</li>
+                        <li>Click "Record Data" to save measurements to the data table</li>
+                        <li>Compare field strength inside vs. outside the solenoid</li>
+                    </ol>
+                </div>
+
+                <div id="field-mapping-lab" class="calculator-panel">
+                    <div class="calculator-panel__header">
+                        <h3 class="calculator-panel__title">Solenoid Field Explorer</h3>
+                    </div>
+
+                    <div class="calculator-panel__body">
+                        <div class="grid grid--2">
+                            <div class="form-group">
+                                <label class="form-label" for="field-slider-current">
+                                    Current: <span id="field-display-current">2.0 A</span>
+                                </label>
+                                <input type="range" id="field-slider-current" class="range-slider" min="0.5" max="10"
+                                    step="0.5" value="2">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="field-slider-turns">
+                                    Turns: <span id="field-display-turns">100 turns</span>
+                                </label>
+                                <input type="range" id="field-slider-turns" class="range-slider" min="10" max="500"
+                                    step="10" value="100">
+                            </div>
+                        </div>
+
+                        <div class="simulation-container mt-lg" style="height: 300px;">
+                            <canvas id="field-map-canvas"></canvas>
+                        </div>
+
+                        <div class="flex gap-md mt-md">
+                            <button id="btn-record-data" class="btn btn--ghost btn--sm">
+                                📊 Record Data Point
+                            </button>
+                            <button id="btn-clear-data" class="btn btn--ghost btn--sm">
+                                🗑️ Clear Data
+                            </button>
+                        </div>
+
+                        <div id="field-readout" class="results-panel mt-lg">
+                            <!-- Populated by JavaScript -->
+                        </div>
+
+                        <div id="field-plot" class="mt-lg">
+                            <p class="text-muted">Record data points to see a table</p>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel__footer">
+                        <span class="text-muted">Length = 5 cm, μᵣ = 1 (air core)</span>
+                    </div>
+                </div>
+
+                <div class="card mt-lg">
+                    <h3>Learning Outcomes</h3>
+                    <ul>
+                        <li>Observe that the field is approximately uniform inside the solenoid</li>
+                        <li>See that the field drops off rapidly outside the solenoid</li>
+                        <li>Understand the relationship between current, turns, and field strength</li>
+                        <li>Practice taking and recording scientific measurements</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Experiment Ideas -->
+            <section class="section" id="experiments">
+                <h2>Try These Experiments</h2>
+
+                <div class="grid grid--2">
+                    <div class="card">
+                        <h3>Experiment A: Perfect Stoichiometry</h3>
+                        <p>
+                            <strong>Goal:</strong> Find the exact mass ratio of Zn to MnO₂ where
+                            both reactants are completely consumed.
+                        </p>
+                        <p class="mt-md">
+                            <strong>Hint:</strong> Use the molar masses and the 1:2 stoichiometric ratio
+                            to calculate the required mass ratio.
+                        </p>
+                        <p class="text-muted mt-md">
+                            <em>Answer: For every 65.38 g of Zn, you need 2 × 86.936 = 173.87 g of MnO₂</em>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Experiment B: Doubling the Current</h3>
+                        <p>
+                            <strong>Goal:</strong> Verify that doubling the current doubles the
+                            magnetic field strength.
+                        </p>
+                        <p class="mt-md">
+                            <strong>Method:</strong> In the Field Mapping lab, record B at 2 A,
+                            then at 4 A, and compare the values.
+                        </p>
+                        <p class="text-muted mt-md">
+                            <em>This demonstrates the linear relationship B ∝ I</em>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Experiment C: Inside vs. Outside</h3>
+                        <p>
+                            <strong>Goal:</strong> Compare field strength inside and outside
+                            the solenoid.
+                        </p>
+                        <p class="mt-md">
+                            <strong>Method:</strong> Place the probe inside the solenoid (center),
+                            then outside to the side. Calculate the ratio.
+                        </p>
+                        <p class="text-muted mt-md">
+                            <em>You should find that the field is much stronger inside</em>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Experiment D: Turns Effect</h3>
+                        <p>
+                            <strong>Goal:</strong> See how increasing turns affects the field.
+                        </p>
+                        <p class="mt-md">
+                            <strong>Method:</strong> Keep current constant, record B at 100 turns,
+                            then at 200, and 300 turns.
+                        </p>
+                        <p class="text-muted mt-md">
+                            <em>B should increase proportionally with N (for fixed L)</em>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="section">
+                <div class="card text-center">
+                    <h2>Review Your Learning</h2>
+                    <p>
+                        Check the glossary for term definitions, or see how your work maps
+                        to the project rubric.
+                    </p>
+                    <div class="flex gap-md" style="justify-content: center;">
+                        <a href="glossary.html" class="btn btn--secondary">
+                            📖 View Glossary
+                        </a>
+                        <a href="about.html" class="btn btn--primary">
+                            📋 See Rubric Mapping
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__links">
+                    <a href="glossary.html" class="footer__link">Glossary</a>
+                    <a href="sources.html" class="footer__link">Sources</a>
+                    <a href="about.html" class="footer__link">About</a>
+                </div>
+                <p class="footer__copy">
+                    Project ChargeLab — Grade 11 Chemistry + Physics Final Project
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="simulations.js"></script>
+</body>
+
+</html>

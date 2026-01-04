@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete glossary of chemistry and physics terms used in Project ChargeLab.">
+    <title>Glossary | Project ChargeLab</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <img src="logo.svg" alt="" width="40" height="40">
+                <span>ChargeLab</span>
+            </a>
+
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
+
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="chemistry.html" class="nav__link">Chemistry</a></li>
+                    <li><a href="physics.html" class="nav__link">Physics</a></li>
+                    <li><a href="integrated.html" class="nav__link">Integrated</a></li>
+                    <li><a href="simulations.html" class="nav__link">Simulations</a></li>
+                    <li><a href="glossary.html" class="nav__link nav__link--active">Glossary</a></li>
+                    <li><a href="sources.html" class="nav__link">Sources</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+
+                <div class="mode-toggle">
+                    <button class="mode-toggle__btn" data-mode="chemistry">⚛️ Chemistry</button>
+                    <button class="mode-toggle__btn" data-mode="physics">🧲 Physics</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-wrapper">
+        <div class="container">
+            <div class="section">
+                <h1>Glossary of Terms</h1>
+                <p class="text-muted">
+                    Definitions for key chemistry and physics concepts used throughout ChargeLab.
+                </p>
+
+                <!-- Filter Controls -->
+                <div class="glossary-filter mt-xl">
+                    <input type="text" id="glossary-search" class="form-input glossary-filter__search"
+                        placeholder="Search terms..." aria-label="Search glossary">
+                    <div class="glossary-filter__tabs">
+                        <button class="glossary-filter__tab glossary-filter__tab--active"
+                            data-category="all">All</button>
+                        <button class="glossary-filter__tab" data-category="chemistry">Chemistry</button>
+                        <button class="glossary-filter__tab" data-category="physics">Physics</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Glossary List -->
+            <section class="section">
+                <ul class="glossary-list">
+
+                    <!-- Chemistry Terms -->
+                    <li class="glossary-item" id="ampere" data-category="physics">
+                        <h3 class="glossary-term">Ampere (A)</h3>
+                        <p class="glossary-definition">
+                            The SI unit of electric current. One ampere equals one coulomb of charge
+                            flowing per second.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Formally defined as the current that produces a force of
+                            2×10⁻⁷ N per meter between two parallel conductors.
+                        </p>
+                        <p class="glossary-formula">I = Q/t where I is current (A), Q is charge (C), t is time (s)</p>
+                    </li>
+
+                    <li class="glossary-item" id="anode" data-category="chemistry">
+                        <h3 class="glossary-term">Anode</h3>
+                        <p class="glossary-definition">
+                            The electrode where oxidation occurs. In a battery, this is the negative
+                            terminal where electrons are released.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Electrons flow from the anode through the external circuit
+                            to the cathode.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="atomic-mass" data-category="chemistry">
+                        <h3 class="glossary-term">Atomic Mass</h3>
+                        <p class="glossary-definition">
+                            The mass of an atom, typically expressed in atomic mass units (amu) or
+                            equivalently in grams per mole (g/mol) for molar mass.
+                        </p>
+                        <p class="glossary-formula">Found on the periodic table below each element's symbol</p>
+                    </li>
+
+                    <li class="glossary-item" id="avogadro" data-category="chemistry">
+                        <h3 class="glossary-term">Avogadro's Number (Nₐ)</h3>
+                        <p class="glossary-definition">
+                            The number of particles (atoms, molecules, ions) in one mole of a substance.
+                        </p>
+                        <p class="glossary-formula">Nₐ = 6.022 × 10²³ mol⁻¹</p>
+                    </li>
+
+                    <li class="glossary-item" id="balanced-equation" data-category="chemistry">
+                        <h3 class="glossary-term">Balanced Equation</h3>
+                        <p class="glossary-definition">
+                            A chemical equation where the number of atoms of each element is equal
+                            on both sides, satisfying the law of conservation of mass.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Coefficients (numbers in front of formulas) are adjusted
+                            to achieve balance.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="b-field" data-category="physics">
+                        <h3 class="glossary-term">B-field (Magnetic Field Strength)</h3>
+                        <p class="glossary-definition">
+                            A vector field that describes the magnetic influence on moving charges,
+                            currents, and magnetic materials. Measured in Tesla (T).
+                        </p>
+                        <p class="glossary-formula">For solenoid: B = μ₀μᵣNI/L</p>
+                    </li>
+
+                    <li class="glossary-item" id="cathode" data-category="chemistry">
+                        <h3 class="glossary-term">Cathode</h3>
+                        <p class="glossary-definition">
+                            The electrode where reduction occurs. In a battery, this is the positive
+                            terminal where electrons are consumed.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="charge" data-category="physics">
+                        <h3 class="glossary-term">Charge (Q)</h3>
+                        <p class="glossary-definition">
+                            A fundamental property of matter. Electric charge is measured in Coulombs (C).
+                        </p>
+                        <p class="glossary-formula">Q = n × F (for electrochemistry, where n is moles of electrons)</p>
+                    </li>
+
+                    <li class="glossary-item" id="coulomb" data-category="physics">
+                        <h3 class="glossary-term">Coulomb (C)</h3>
+                        <p class="glossary-definition">
+                            The SI unit of electric charge. One coulomb equals approximately
+                            6.24 × 10¹⁸ electrons.
+                        </p>
+                        <p class="glossary-formula">1 C = 1 A × 1 s</p>
+                    </li>
+
+                    <li class="glossary-item" id="electric-current" data-category="physics">
+                        <h3 class="glossary-term">Electric Current</h3>
+                        <p class="glossary-definition">
+                            The flow of electric charge through a conductor, measured in Amperes (A).
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Conventional current flows from positive to negative;
+                            electron flow is the opposite direction.
+                        </p>
+                        <p class="glossary-formula">I = Q/t = V/R (from Ohm's Law)</p>
+                    </li>
+
+                    <li class="glossary-item" id="electromagnet" data-category="physics">
+                        <h3 class="glossary-term">Electromagnet</h3>
+                        <p class="glossary-definition">
+                            A magnet created by passing electric current through a coil of wire.
+                            Can be turned on and off by controlling the current.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Strength is increased by using more turns, higher current,
+                            or a ferromagnetic core.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="electromagnetism" data-category="physics">
+                        <h3 class="glossary-term">Electromagnetism</h3>
+                        <p class="glossary-definition">
+                            The branch of physics dealing with the interaction between electric and
+                            magnetic fields. Moving charges create magnetic fields.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="electron" data-category="chemistry">
+                        <h3 class="glossary-term">Electron</h3>
+                        <p class="glossary-definition">
+                            A negatively charged subatomic particle. Electrons flow through circuits
+                            as electric current.
+                        </p>
+                        <p class="glossary-formula">Charge: e = 1.602 × 10⁻¹⁹ C</p>
+                    </li>
+
+                    <li class="glossary-item" id="energy" data-category="physics">
+                        <h3 class="glossary-term">Energy (E)</h3>
+                        <p class="glossary-definition">
+                            The capacity to do work. In electrical systems, measured in Joules (J)
+                            or Watt-hours (Wh).
+                        </p>
+                        <p class="glossary-formula">E = V × Q = P × t; 1 Wh = 3600 J</p>
+                    </li>
+
+                    <li class="glossary-item" id="excess-reagent" data-category="chemistry">
+                        <h3 class="glossary-term">Excess Reagent</h3>
+                        <p class="glossary-definition">
+                            A reactant present in greater quantity than needed. Some will remain
+                            unreacted after the reaction completes.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="faraday" data-category="chemistry">
+                        <h3 class="glossary-term">Faraday Constant (F)</h3>
+                        <p class="glossary-definition">
+                            The charge of one mole of electrons. Used to convert between moles of
+                            electrons and electrical charge.
+                        </p>
+                        <p class="glossary-formula">F = 96,485 C/mol</p>
+                    </li>
+
+                    <li class="glossary-item" id="joule" data-category="physics">
+                        <h3 class="glossary-term">Joule (J)</h3>
+                        <p class="glossary-definition">
+                            The SI unit of energy. One joule equals one watt-second or one
+                            volt-coulomb.
+                        </p>
+                        <p class="glossary-formula">1 J = 1 V × 1 C = 1 W × 1 s</p>
+                    </li>
+
+                    <li class="glossary-item" id="limiting-reagent" data-category="chemistry">
+                        <h3 class="glossary-term">Limiting Reagent</h3>
+                        <p class="glossary-definition">
+                            The reactant that is completely consumed first in a chemical reaction,
+                            determining the maximum amount of product that can form.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: Identified by comparing the mole ratio of reactants
+                            to the stoichiometric ratio.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="magnetic-field" data-category="physics">
+                        <h3 class="glossary-term">Magnetic Field</h3>
+                        <p class="glossary-definition">
+                            A region where magnetic forces can be detected. Created by moving charges
+                            (currents) or permanent magnets.
+                        </p>
+                        <p class="glossary-formula">Units: Tesla (T) or Gauss (G); 1 T = 10,000 G</p>
+                    </li>
+
+                    <li class="glossary-item" id="molar-mass" data-category="chemistry">
+                        <h3 class="glossary-term">Molar Mass (M)</h3>
+                        <p class="glossary-definition">
+                            The mass of one mole of a substance, numerically equal to the atomic/molecular
+                            mass in grams per mole.
+                        </p>
+                        <p class="glossary-formula">Units: g/mol; e.g., M(Zn) = 65.38 g/mol</p>
+                    </li>
+
+                    <li class="glossary-item" id="mole" data-category="chemistry">
+                        <h3 class="glossary-term">Mole (mol)</h3>
+                        <p class="glossary-definition">
+                            The SI unit for amount of substance. One mole contains exactly
+                            6.022 × 10²³ particles.
+                        </p>
+                        <p class="glossary-formula">n = m/M where n is moles, m is mass (g), M is molar mass (g/mol)</p>
+                    </li>
+
+                    <li class="glossary-item" id="ohms-law" data-category="physics">
+                        <h3 class="glossary-term">Ohm's Law</h3>
+                        <p class="glossary-definition">
+                            The relationship between voltage, current, and resistance in an electrical circuit.
+                        </p>
+                        <p class="glossary-formula">V = I × R; I = V/R; R = V/I</p>
+                    </li>
+
+                    <li class="glossary-item" id="oxidation" data-category="chemistry">
+                        <h3 class="glossary-term">Oxidation</h3>
+                        <p class="glossary-definition">
+                            The loss of electrons by a species. Remembered by "OIL" — Oxidation Is Loss.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: In our reaction, Zn is oxidized: Zn → Zn²⁺ + 2e⁻
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="permeability" data-category="physics">
+                        <h3 class="glossary-term">Permeability (μ)</h3>
+                        <p class="glossary-definition">
+                            A measure of how easily a material supports the formation of a magnetic field.
+                        </p>
+                        <p class="glossary-formula">μ = μ₀ × μᵣ; μ₀ = 4π × 10⁻⁷ H/m</p>
+                    </li>
+
+                    <li class="glossary-item" id="power" data-category="physics">
+                        <h3 class="glossary-term">Power (P)</h3>
+                        <p class="glossary-definition">
+                            The rate at which energy is transferred or converted. Measured in Watts (W).
+                        </p>
+                        <p class="glossary-formula">P = V × I = I²R = V²/R</p>
+                    </li>
+
+                    <li class="glossary-item" id="redox" data-category="chemistry">
+                        <h3 class="glossary-term">Redox Reaction</h3>
+                        <p class="glossary-definition">
+                            A reaction involving both reduction (gain of electrons) and oxidation
+                            (loss of electrons). Electrons are transferred between species.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: In batteries, redox reactions convert chemical energy
+                            to electrical energy.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="reduction" data-category="chemistry">
+                        <h3 class="glossary-term">Reduction</h3>
+                        <p class="glossary-definition">
+                            The gain of electrons by a species. Remembered by "RIG" — Reduction Is Gain.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="resistance" data-category="physics">
+                        <h3 class="glossary-term">Resistance (R)</h3>
+                        <p class="glossary-definition">
+                            Opposition to current flow in a circuit, measured in Ohms (Ω).
+                        </p>
+                        <p class="glossary-formula">R = V/I (from Ohm's Law)</p>
+                    </li>
+
+                    <li class="glossary-item" id="right-hand-rule" data-category="physics">
+                        <h3 class="glossary-term">Right-Hand Rule</h3>
+                        <p class="glossary-definition">
+                            A mnemonic for determining the direction of magnetic fields relative to
+                            current direction using your right hand.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: For wires, thumb = current direction, fingers curl = B-field.
+                            For loops, fingers curl = current, thumb = B-field direction.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="solenoid" data-category="physics">
+                        <h3 class="glossary-term">Solenoid</h3>
+                        <p class="glossary-definition">
+                            A coil of wire wound in a helix. When current flows through it, creates
+                            a uniform magnetic field inside.
+                        </p>
+                        <p class="glossary-formula">B = μ₀μᵣNI/L at center</p>
+                    </li>
+
+                    <li class="glossary-item" id="stoichiometry" data-category="chemistry">
+                        <h3 class="glossary-term">Stoichiometry</h3>
+                        <p class="glossary-definition">
+                            The quantitative relationship between reactants and products in a
+                            chemical reaction, based on the balanced equation.
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="stoichiometric-ratio" data-category="chemistry">
+                        <h3 class="glossary-term">Stoichiometric Ratio</h3>
+                        <p class="glossary-definition">
+                            The ratio of moles of reactants and products as given by the coefficients
+                            in a balanced chemical equation.
+                        </p>
+                        <p class="glossary-technical">
+                            Technical Note: For Zn + 2MnO₂ → products, the ratio is 1:2
+                        </p>
+                    </li>
+
+                    <li class="glossary-item" id="tesla" data-category="physics">
+                        <h3 class="glossary-term">Tesla (T)</h3>
+                        <p class="glossary-definition">
+                            The SI unit of magnetic field strength (magnetic flux density).
+                        </p>
+                        <p class="glossary-formula">1 T = 1 Wb/m² = 1 kg/(A·s²)</p>
+                    </li>
+
+                    <li class="glossary-item" id="voltage" data-category="physics">
+                        <h3 class="glossary-term">Voltage (V)</h3>
+                        <p class="glossary-definition">
+                            Electric potential difference between two points. Represents the
+                            energy per unit charge, measured in Volts.
+                        </p>
+                        <p class="glossary-formula">V = E/Q = W/Q (energy per charge)</p>
+                    </li>
+
+                    <li class="glossary-item" id="watt" data-category="physics">
+                        <h3 class="glossary-term">Watt (W)</h3>
+                        <p class="glossary-definition">
+                            The SI unit of power. One watt equals one joule per second.
+                        </p>
+                        <p class="glossary-formula">1 W = 1 J/s = 1 V × 1 A</p>
+                    </li>
+
+                    <li class="glossary-item" id="watt-hour" data-category="physics">
+                        <h3 class="glossary-term">Watt-hour (Wh)</h3>
+                        <p class="glossary-definition">
+                            A unit of energy equal to one watt of power expended for one hour.
+                        </p>
+                        <p class="glossary-formula">1 Wh = 3600 J</p>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__links">
+                    <a href="glossary.html" class="footer__link">Glossary</a>
+                    <a href="sources.html" class="footer__link">Sources</a>
+                    <a href="about.html" class="footer__link">About</a>
+                </div>
+                <p class="footer__copy">
+                    Project ChargeLab — Grade 11 Chemistry + Physics Final Project
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
