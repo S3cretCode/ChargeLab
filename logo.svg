@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D1FF"/>
+      <stop offset="100%" stop-color="#3EF1C6"/>
+    </linearGradient>
+    <linearGradient id="coilGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3EF1C6"/>
+      <stop offset="100%" stop-color="#00D1FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer orbit ring -->
+  <ellipse cx="100" cy="100" rx="75" ry="30" 
+           fill="none" stroke="url(#logoGradient)" stroke-width="2" 
+           transform="rotate(-20, 100, 100)" opacity="0.6"/>
+  
+  <!-- Middle orbit ring -->
+  <ellipse cx="100" cy="100" rx="65" ry="25" 
+           fill="none" stroke="url(#logoGradient)" stroke-width="2" 
+           transform="rotate(40, 100, 100)" opacity="0.8"/>
+  
+  <!-- Inner orbit ring -->
+  <ellipse cx="100" cy="100" rx="55" ry="20" 
+           fill="none" stroke="url(#logoGradient)" stroke-width="2" 
+           transform="rotate(-70, 100, 100)" opacity="0.7"/>
+  
+  <!-- Central nucleus/core -->
+  <circle cx="100" cy="100" r="18" fill="url(#logoGradient)"/>
+  <circle cx="100" cy="100" r="12" fill="#071733"/>
+  <circle cx="100" cy="100" r="6" fill="url(#logoGradient)"/>
+  
+  <!-- Electron particles on orbits -->
+  <circle cx="175" cy="100" r="6" fill="#00D1FF" transform="rotate(-20, 100, 100)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="0 100 100" to="360 100 100" dur="4s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <circle cx="165" cy="100" r="5" fill="#3EF1C6" transform="rotate(40, 100, 100)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="360 100 100" to="0 100 100" dur="3s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <circle cx="155" cy="100" r="4" fill="#00D1FF" transform="rotate(-70, 100, 100)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      from="0 100 100" to="360 100 100" dur="5s" repeatCount="indefinite" additive="sum"/>
+  </circle>
+  
+  <!-- Coil/solenoid element at bottom -->
+  <g transform="translate(100, 170)">
+    <!-- Coil turns -->
+    <path d="M-30,0 Q-30,-8 -15,-8 Q0,-8 0,0 Q0,8 15,8 Q30,8 30,0" 
+          fill="none" stroke="url(#coilGradient)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-25,0 Q-25,-6 -12,-6 Q0,-6 0,0 Q0,6 12,6 Q25,6 25,0" 
+          fill="none" stroke="url(#coilGradient)" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <path d="M-20,0 Q-20,-4 -10,-4 Q0,-4 0,0 Q0,4 10,4 Q20,4 20,0" 
+          fill="none" stroke="url(#coilGradient)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- Field lines indicating magnetism -->
+    <line x1="-35" y1="-5" x2="-45" y2="-10" stroke="#00D1FF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-35" y1="5" x2="-45" y2="10" stroke="#00D1FF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="35" y1="-5" x2="45" y2="-10" stroke="#3EF1C6" stroke-width="1.5" opacity="0.6"/>
+    <line x1="35" y1="5" x2="45" y2="10" stroke="#3EF1C6" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  
+  <!-- Subtle glow effect -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#logoGradient)" stroke-width="1" opacity="0.2"/>
+</svg>
